@@ -1,7 +1,7 @@
 var express = require('express')
 var fs = require('fs');
 var app = express();
-var buff = new Buffer();
+var buff = new Buffer(200);
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
