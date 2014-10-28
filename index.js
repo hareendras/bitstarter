@@ -3,11 +3,14 @@ var fs = require('fs');
 var app = express();
 var buff = new Buffer(200);
 
+
+buff = fs.readFile('index.html');
+
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send(buff.toString(fs.readFile('index.html')));
+  response.send(buff.toString());
 })
 
 app.listen(app.get('port'), function() {
